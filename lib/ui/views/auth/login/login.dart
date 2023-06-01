@@ -2,16 +2,16 @@ import 'package:merchan/common/widgets/widgets.dart';
 import 'package:merchan/config/config.dart';
 import 'package:flutter/material.dart';
 import 'package:merchan/domain/enums/ui.dart';
-import 'package:merchan/ui/views/auth/register/widgets/heading.dart';
+import 'package:merchan/ui/views/auth/login/widgets/heading.dart';
 
-class RegisterView extends StatefulWidget {
-  const RegisterView({super.key});
+class LoginView extends StatefulWidget {
+  const LoginView({super.key});
 
   @override
-  State<RegisterView> createState() => _RegisterState();
+  State<LoginView> createState() => _LoginState();
 }
 
-class _RegisterState extends State<RegisterView> {
+class _LoginState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     final Responsive responsive = Responsive.of(context);
@@ -29,19 +29,23 @@ class _RegisterState extends State<RegisterView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     qSpaceV12,
-                    const HeaderMerchant(),
+                    const LoginHeaderMerchant(),
                     const Spacer(),
-                    const TermsAndPrivacy(),
-                    qSpaceV24,
                     Column(
                       children: <Widget>[
                         BottomButton(
-                          label: "Crear cuenta",
+                          label: "Ingresar",
                           callback: () {},
                         ),
                         qSpaceV12,
                         BottomButton(
-                          label: "¿Ya tienes una cuenta? Inicia sesión aquí",
+                          label: "¿Olvidaste tu contraseña?",
+                          callback: () => {},
+                          type: ButtonType.TEXT,
+                          textColor: qWhite,
+                        ),
+                        BottomButton(
+                          label: "¿No tienes una cuenta? Registrate aquí",
                           callback: () => {},
                           type: ButtonType.TEXT,
                         ),
